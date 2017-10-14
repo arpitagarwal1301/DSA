@@ -2,7 +2,13 @@ package Queue;
 
 import java.util.ArrayList;
 
-public class GeneralisedQueue {
+/**
+ * Arraylist has a load factor of 75% ....so when you fill 75% of arraylist then it will double
+ * size of the arraylist which is not efficient
+ *
+ */
+
+public class QueueFromArrayList {
 
     private static ArrayList list;
     private static int rear;

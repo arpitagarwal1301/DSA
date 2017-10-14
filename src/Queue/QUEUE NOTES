@@ -1,0 +1,4 @@
+QUEUE
+
+1) Repeated deque->enque is an important operation as it can used to reverse the queue
+2) Most effective and dynamic queue is with linked list because size increments by 1 each time.

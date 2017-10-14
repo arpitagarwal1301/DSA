@@ -1,6 +1,5 @@
 package Stacks;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class PoisonousPlant {
@@ -9,16 +8,17 @@ public class PoisonousPlant {
         // Complete this function
         int temp ;
         int count = -1;
-        ArrayList<Integer> dead = new ArrayList<>();
+        int deadArr[] = new int[p.length];
         boolean continueLoop =true;
         while(continueLoop){
             continueLoop = false;
-            temp = Integer.MAX_VALUE;
-            for (int i =0;i<p.length;i++){
-                if (!dead.contains(i)){
-                    //if poison greater than left plant then it's position will be added to dead else to live
+            temp = p[0];
+            for (int i =1;i<p.length;i++){
+                //Initially all elements in array are 0
+                if (deadArr[i]!=i){
+                    //if poison greater than left plant then it's position will be added to deadArray at i position
                     if (p[i]>temp){
-                        dead.add(i);
+                        deadArr[i] = i;
                         continueLoop = true;
                     }
                     //now new temp which will take the position as the left plant

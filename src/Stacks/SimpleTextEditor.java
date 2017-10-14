@@ -26,7 +26,6 @@ public class SimpleTextEditor {
                     stack.push(stringBuilder);
                     int size = stringBuilder.length();
                     stringBuilder = stringBuilder.substring(0,size-in.nextInt());
-
                     break;
                 case 3:
                     System.out.println(stringBuilder.charAt(in.nextInt()-1));
