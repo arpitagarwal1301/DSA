@@ -1,0 +1,14 @@
+Advantages
+
+1) optimal use of memory/no memory wastage(LOAD FACTOR AFTER 75% MEMORY INCREASE)
+2) Insertion/Deletion in between elements is efficient
+3) complexity
+    search o(n)
+    insertion O(1),O(N),O(N)
+    deletion O(1),O(N),O(N)
+
+Disadvantages
+
+1) In Array we have only data but in linked list we store address also so extra space
+2) Array has continuous addresses allocation while linked list every data point has different addresses
+
