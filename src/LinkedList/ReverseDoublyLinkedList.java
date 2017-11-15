@@ -12,26 +12,23 @@ public class ReverseDoublyLinkedList {
     }
 
     Node Reverse(Node head) {
+
         Node node = head;
+        while (node!=null){
 
-        if (node.next == null){
-            return head;
-        }
-        Node tempNode = node.next.next;
-        while(tempNode!=null){
-
-            Node nextNode = node.next;
-            nextNode.next = node;
-            nextNode.prev = tempNode;
-            node.next = node.prev;
-            node.prev = nextNode;
-            tempNode = tempNode.next.next;
-            if(tempNode==null){
-
+            Node nextnode = node.next;
+            //for last node
+            if (nextnode==null){
+                head = node;
             }
+            //revert the node
+            node.next = node.prev;
+            node.prev = nextnode;
+            //move to next node here you can apply recurrsion also
+            node = nextnode;
         }
 
+        //return the head
         return head;
-
     }
 }

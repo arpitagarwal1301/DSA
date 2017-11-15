@@ -54,6 +54,26 @@ public class ReverseLinkedList {
 
     }
 
+    /**
+     * Hacker rank problem
+     * @param head
+     * @return
+     */
+    Node Reverse(Node head) {
+
+        Node current = head;
+        Node prev = null;
+
+        while (current!=null){
+            Node next = current.next;
+            current.next=prev;
+            prev = current;
+            current = next;
+        }
+         return prev;
+    }
+
+
     public void printList(){
         Node node = head;
         while (node!=null){
