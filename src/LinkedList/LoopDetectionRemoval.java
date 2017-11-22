@@ -1,6 +1,6 @@
 package LinkedList;
 
-public class LoopDetection {
+public class LoopDetectionRemoval {
 
     class Node{
         int data;
@@ -14,15 +14,7 @@ public class LoopDetection {
 
    Node head = null;
 
-
-    public static void main(String[] args) {
-
-        LoopDetection listClass = new LoopDetection();
-        listClass.isLoop();
-
-    }
-
-    private void isLoop(){
+    public LoopDetectionRemoval(){
         Node node1 = new Node(2);
         Node node2 = new Node(4);
         Node node3 = new Node(5);
@@ -38,26 +30,42 @@ public class LoopDetection {
 
         node4.next = node2;
         head = node1;
+    }
+
+    public static void main(String[] args) {
+
+        LoopDetectionRemoval listClass = new LoopDetectionRemoval();
+        listClass.isLoop();
+        listClass.isLoop();
+
+    }
+
+    private void isLoop(){
+
 
         Node tortoise = head;
         Node hair = head;
         while (tortoise.next!=null && hair.next.next != null ){
 
             if (tortoise!=head && tortoise==hair){
-                System.out.println("True");
+                System.out.println("True loop detected");
                 tortoise = head;
 
-                    while (tortoise != hair){
+                //DETECTING THE LOOP PREVIOUS AND REMOVING THE LOOP
+                    while (tortoise.next != hair.next){
                         tortoise = tortoise.next;
                         hair = hair.next;
                     }
-                    System.out.println(tortoise.data);
+                    hair.next = null;
+//                    System.out.println(tortoise.data);
                 return;
             }else {
                 tortoise = tortoise.next;
                 hair = hair.next.next;
             }
         }
+
+        System.out.println("NO loop detected");
     }
 
 

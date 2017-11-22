@@ -1,0 +1,24 @@
+http://www.geeksforgeeks.org/binary-tree-set-1-introduction/
+
+Advantage over array linked list
+1) Dynamic space (array fixed)
+2) Searching time complexity less (linked list is of O(n) )
+
+Binary tree
+1) tree where nodes have 0,1,2 child nodes
+
+Full binary tree
+1) tree where nodes have 0,2 child nodes
+
+Binary Search Tree
+1) Left child < root node < right child
+
+NOTE : inorder transversal for any binary search tree gives sorted order ascending
+
+IMP** NOTE
+-For solving trees consider root , leftsubtree and rightsubtree
+-Firstly just consider 1 root node in the tree and
+ figure out the exiting condition and then visualise with some cases with backtracking.
+
+ total count == 1 + count(leftsubtree) + count(rightsubtree);
+ total leafs == count(leftsubree)+count(rightsubtree);

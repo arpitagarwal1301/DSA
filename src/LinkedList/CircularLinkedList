@@ -1,0 +1,5 @@
+Concepts
+1)Always track the tail node ....since tail.next = head
+
+Advantages
+1)Iterate from anywhere
