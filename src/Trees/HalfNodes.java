@@ -24,13 +24,12 @@ public class HalfNodes {
 
         if (root==null){
             return 0;
-        }else if (root.rightChild==null && root.leftChild!=null){
+        }else if ( root.rightChild==null && root.leftChild!=null){
             return 1;
         }else if (root.rightChild!=null && root.leftChild==null){
             return 1;
         }
 
         return countHalfLeafNode(root.leftChild)+countHalfLeafNode(root.rightChild);
-
     }
 }

@@ -18,36 +18,61 @@ public class Tree {
         tree.root.leftChild = new TreeNode(5);
         tree.root.rightChild = new TreeNode(14);
         tree.root.rightChild.rightChild = new TreeNode(30);
-        tree.root.rightChild.leftChild = new TreeNode(13);
+//        tree.root.rightChild.leftChild = new TreeNode(133);
 
 
-        System.out.println(tree.findDataRec(tree.root,3).data);
-//        System.out.println(tree.findData(tree.root,13));
+//        System.out.println(tree.findDataRec(tree.root,3).data);
+//        tree.findData(tree.root,13);
+        tree.insertIntoTreeRec(tree.root,133);
+                tree.findData(tree.root,133);
+
 
     }
 
 
-    public void insertIntoTree(){
+    public TreeNode insertIntoTreeRec(TreeNode root,int data){
 
-    }
-
-    public int findData(TreeNode root,int data){
-        int result = 0;
-//        if (root == null){
-//            System.out.println();
-//        }
-        if (root.data == data){
-//            System.out.println(data);
-            return data;
-        }else if (data < root.data){
-          result =   findData(root.leftChild,data);
-        }else if (data >root.data){
-           result =  findData(root.rightChild,data);
+        if (root==null){
+            return new TreeNode(data);
         }
-        return result;
+
+        if (data > root.data){
+           root.setRightChild(insertIntoTreeRec(root.rightChild,data)); ;
+        }else {
+            root.setLeftChild(insertIntoTreeRec(root.leftChild,data));
+        }
+        return root;
     }
 
-    public TreeNode findDataRec(TreeNode root, int data){
+
+    public void findData(TreeNode root,int data){
+
+        while (root!=null){
+            if (data > root.data){
+                root = root.rightChild;
+            }else if (data < root.data){
+                root = root.leftChild;
+            }else {
+                System.out.println(root.data);
+                break;
+            }
+        }
+
+        if (root==null){
+            System.out.println("not present");
+        }
+    }
+
+    /**
+     * base condition
+     * current node
+     * recursion
+     * @param root
+     * @param data
+     * @return
+     */
+    public TreeNode findDataRec(TreeNode root,int data){
+
 
         if (root == null){
             return  null;
@@ -59,6 +84,5 @@ public class Tree {
             return findDataRec(root.rightChild,data);
         }
     }
-
 
 }

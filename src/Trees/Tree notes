@@ -13,7 +13,10 @@ Full binary tree
 Binary Search Tree
 1) Left child < root node < right child
 
-NOTE : inorder transversal for any binary search tree gives sorted order ascending
+Interesting facts
+ - inorder transversal for any binary search tree gives sorted order ascending
+ - We can construct a BST with only Preorder or Postorder or Level Order traversal.
+  Note that we can always get inorder traversal by sorting the only given traversal.
 
 IMP** NOTE
 -For solving trees consider root , leftsubtree and rightsubtree
@@ -22,3 +25,15 @@ IMP** NOTE
 
  total count == 1 + count(leftsubtree) + count(rightsubtree);
  total leafs == count(leftsubree)+count(rightsubtree);
+- When thinking about a binary tree problem, it's often a good idea to draw a few little trees to think about the various cases.
+---The basic pattern of the lookup() code occurs in many recursive tree algorithms:
+ -- deal with the base case where the tree is empty, deal with the current node, and then use recursion to deal with the subtrees.
+ -- If the tree is a binary search tree,
+ -- there is often some sort of less-than test on the node to decide if the recursion should go left or right.
+
+Note : height(no of nodes) and depth(no of edges) are different
+eg : for  A
+         / \
+        B   c  height = 2, depth =1
+
+Links for referral - http://cslibrary.stanford.edu/110/BinaryTrees.html#s1
