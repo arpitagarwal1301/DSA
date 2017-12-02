@@ -13,6 +13,13 @@ Full binary tree
 Binary Search Tree
 1) Left child < root node < right child
 
+Complete binary tree
+1)All levels are full ..if there are n levels then no of elements = 2^n
+
+
+Level Order traversal
+- known as breadth first search(BFS)
+
 Interesting facts
  - inorder transversal for any binary search tree gives sorted order ascending
  - We can construct a BST with only Preorder or Postorder or Level Order traversal.

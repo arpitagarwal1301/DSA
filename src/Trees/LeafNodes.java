@@ -1,5 +1,8 @@
 package Trees;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class LeafNodes {
 
     TreeNode root = null;
@@ -16,7 +19,7 @@ public class LeafNodes {
         tree.root.rightChild.leftChild = new TreeNode(13);
 
         LeafNodes nodes = new LeafNodes();
-        System.out.println(nodes.countLeafNode(tree.root));
+        System.out.println(nodes.countLeafWithoutRec(tree.root));
 
     }
 
@@ -30,5 +33,36 @@ public class LeafNodes {
         //left subtree , right subtree
         return countLeafNode(root.leftChild)+countLeafNode(root.rightChild);
 
+    }
+
+    public int countLeafWithoutRec(TreeNode root){
+
+        if (root==null){
+            return 0;
+        }
+
+        int count = 0;
+        Queue<TreeNode> q = new LinkedList<>();
+        q.add(root);
+
+        while (!q.isEmpty()){
+            TreeNode node = q.poll();
+
+            //for full nodes != instead of ==
+            if (node.rightChild==null && node.leftChild==null){
+                count++;
+            }
+
+
+                if (node.leftChild!=null){
+                    q.add(node.leftChild);
+                }
+
+                if (node.rightChild!=null){
+                    q.add(node.rightChild);
+                }
+
+        }
+        return count;
     }
 }

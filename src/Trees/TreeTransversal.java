@@ -21,7 +21,6 @@ public class TreeTransversal {
 
         TreeTransversal nodes = new TreeTransversal();
         nodes.inorderTransversal(tree.root);
-//        nodes.inorderTransversalRec(tree.root);
 
     }
 
@@ -64,59 +63,22 @@ public class TreeTransversal {
 
     }
 
+    //TODO compelete this
     public void postorderTransversal(TreeNode root){
         if (root == null){
             return;
         }
 
 
-        Boolean flag = false;
         Stack<TreeNode> stk = new Stack<>();
-        stk.add(root);
-        TreeNode topRoot = root;
-        do{
-            TreeNode tempNode = stk.pop();
+        boolean complete = false;
+        TreeNode currentNode = root;
+        stk.push(currentNode);
 
-            if (tempNode==topRoot){
-                //revert flag
-//                flag = true ? true:false;
-                if (flag){
-                    flag = false;
-                }else {
-                    flag = true;
-                }
-            }
+        while (!complete){
+            TreeNode node = stk.peek();
 
-            if (tempNode.leftChild==null && tempNode.rightChild==null){
-                //revert flag is leaf
-                flag = false;
-            }
-
-            //if flag true then add into stack else only pop and print
-            if (flag){
-
-                if (tempNode.rightChild!=null){
-                    stk.add(tempNode.rightChild);
-                }
-                if (tempNode.leftChild!=null){
-                    stk.add(tempNode.leftChild);
-                }
-                stk.add(tempNode);
-
-            }else {
-
-                System.out.println(tempNode.data);
-                while (!stk.isEmpty() && stk.peek()!=topRoot ){
-                    TreeNode node = stk.pop();
-                    System.out.println(node.data);
-                }
-
-                if (!stk.isEmpty()){
-                    topRoot = stk.peek();
-                }
-            }
-        }while (topRoot!=stk.peek());
-        System.out.println(stk.pop().data);
+        }
 
     }
 
@@ -138,58 +100,27 @@ public class TreeTransversal {
             return;
         }
 
-
-        Boolean flag = false;
         Stack<TreeNode> stk = new Stack<>();
-        stk.add(root);
-        TreeNode topRoot = root;
-        while (!stk.isEmpty()){
-            TreeNode tempNode = stk.pop();
+        boolean complete = false;
+        TreeNode currentNode = root;
 
-            if (tempNode==topRoot){
-                //revert flag
-//                flag = true ? true:false;
-                if (flag){
-                    flag = false;
-                }else {
-                    flag = true;
-                }
-            }
+        while (!complete){
 
-            if (tempNode.leftChild==null && tempNode.rightChild==null){
-                //revert flag is leaf
-                flag = false;
-            }
-
-            //if flag true then add into stack else only pop and print
-            if (flag){
-
-                if (tempNode.rightChild!=null){
-                    stk.add(tempNode.rightChild);
-                }
-                stk.add(tempNode);
-                if (tempNode.leftChild!=null){
-                    stk.add(tempNode.leftChild);
-                }
+            if (currentNode!=null){
+                stk.push(currentNode);
+                currentNode = currentNode.leftChild;
             }else {
-                System.out.println(tempNode.data);
-                while (!stk.isEmpty() && stk.peek()!=topRoot){
-                    TreeNode node = stk.pop();
-                    System.out.println(node.data);
-                }
-
-                if (!stk.isEmpty()){
-                    System.out.println(stk.pop().data);
-                }
-
-                if (!stk.isEmpty()){
-                    topRoot = stk.peek();
+                if (stk.isEmpty()){
+                    complete = true;
+                }else {
+                    TreeNode tempNode = stk.pop();
+                    System.out.println(tempNode.data);
+                    if (tempNode.rightChild!=null){
+                        currentNode = tempNode.rightChild;
+                    }
                 }
             }
-
-
         }
-
     }
 
     public void inorderTransversalRec(TreeNode root){
