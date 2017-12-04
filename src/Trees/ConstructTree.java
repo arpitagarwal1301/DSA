@@ -83,7 +83,6 @@ public class ConstructTree {
         return root;
     }
 
-
     public TreeNode constructFromPostIn(Stack<Integer> postOrder, Queue<Integer> inOrder){
         //pop first element
         int n = postOrder.pop();
@@ -124,6 +123,12 @@ public class ConstructTree {
         return root;
     }
 
+    /**
+     *
+     * @param preOrder
+     * @param postOrder Need reverse post order input in the queue
+     * @return
+     */
     public TreeNode constructFrmPostPre(Queue<Integer> preOrder,Queue<Integer> postOrder){
         int n = preOrder.poll();
          postOrder.poll();
