@@ -1,0 +1,19 @@
+Red Black Tree
+
+1) It should be a BST
+2) Root should be black
+3) No red - red association
+4) In all possible paths no. of blacks will be same
+
+Insertion rules
+
+1) If Tree is empty create black root node
+2) Insert new leaf node always red color
+    i)  if new node parent is black then insertion done
+    ii) if it is red then
+        - check parent sibling color and provide opp. color to both nodes and their root is not root
+        of the tree then change color
+        - if sibling is not present
+                -- rotate on (L) , (R) , R(L) , L(R)
+                -- change the color(of new root and previous root only) in the last rotation
+                *** for (*) rotation change the color

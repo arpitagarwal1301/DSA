@@ -1,0 +1,14 @@
+AVL TREE
+    - complexity of searching in binary search tree =  O(no of levels of tree)
+    - in skew(left/right) tree it will be = O(n)
+    - To overcome this we have to construct AVL tree
+
+RUles for AVL
+    - BST TREE
+    - |height right subtree - height of left| <= 1
+
+Processes (Understand)
+    - Left rotation
+    - right rotation
+    - Left Right rotation
+    - Right Left rotation

@@ -8,7 +8,6 @@ import java.util.*;
 public class TopViewGeeksForGeeks {
 
     TreeNode root = null;
-
     public static Map<Integer,List<Integer>> map = new HashMap();
 
     public static void main(String[] args) {

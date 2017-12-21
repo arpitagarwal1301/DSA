@@ -3,10 +3,10 @@ package Trees;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Stack;
 
 /**
  * Hint try with 2 stacks ,leftToRight rightToLeft flags
+ * TODO
  */
 public class PrintZigZag {
 
@@ -37,61 +37,6 @@ public class PrintZigZag {
      * @param root
      */
     public void printZigZag(TreeNode root){
-        if (root==null){
-            return;
-        }
-        boolean leftToright = false;
-        Stack<TreeNode> queue = new Stack<>();
-        queue.add(null);
-        queue.add(root);
-
-
-        while (!queue.isEmpty()){
-            TreeNode node = queue.pop();
-
-            if (node==null){
-                if (leftToright){
-                    leftToright= false;
-                }else {
-                    leftToright = true;
-                }
-
-                if (!queue.isEmpty()){
-                    queue.add(null);
-                }
-
-            }else {
-
-                System.out.println(node.data+" ");
-                if (leftToright){
-                    //insert child left to right
-                    if (node.leftChild!=null){
-                        queue.add(node.leftChild);
-                    }
-                    if (node.rightChild!=null){
-                        queue.add(node.rightChild);
-                    }
-                }else {
-
-                    //insert childs right to left
-                    if (node.rightChild!=null){
-                        queue.add(node.rightChild);
-                    }
-                    if (node.leftChild!=null){
-                        queue.add(node.leftChild);
-                    }
-                }
-
-            }
-
-
-
-
-
-
-
-
-        }
 
     }
 

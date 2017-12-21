@@ -1,6 +1,6 @@
 package Trees;
 
-public class TreeNode {
+public class TreeNode  {
     int data;
     TreeNode leftChild;
     TreeNode rightChild;

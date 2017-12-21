@@ -1,9 +1,12 @@
 package Trees;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class RootToLeafPathSum {
 
     TreeNode root = null;
-
+    List<Integer> list = new ArrayList<>();
 
     public static void main(String[] args) {
 
@@ -16,16 +19,30 @@ public class RootToLeafPathSum {
         tree.root.rightChild.leftChild = new TreeNode(13);
 
         RootToLeafPathSum nodes = new RootToLeafPathSum();
-        System.out.println(nodes.rootToLeafSum(tree.root));
+      nodes.rootToLeafSum(tree.root);
 
     }
 
-    public int rootToLeafSum(TreeNode root){
-        int sum = 0;
+    public void rootToLeafSum(TreeNode root){
        if (root==null){
-            sum =0;
+            return;
        }
-       sum = root.data+rootToLeafSum(root.leftChild) + rootToLeafSum(root.rightChild);
-       return sum;
+
+        list.add(root.data);
+
+        if (root.leftChild==null && root.rightChild==null){
+           int sum =  0;
+           for (Integer n : list){
+               sum = sum + n;
+           }
+           System.out.println(sum+" ");
+           list.remove(list.size()-1);
+       }
+
+       rootToLeafSum(root.leftChild);
+       rootToLeafSum(root.rightChild);
+//       sum = root.data+rootToLeafSum(root.leftChild) + rootToLeafSum(root.rightChild);
+//       return sum;
+
     }
 }
