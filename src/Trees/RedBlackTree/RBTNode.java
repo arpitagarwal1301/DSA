@@ -1,17 +1,27 @@
-package Trees.AVLTree;
+package Trees.RedBlackTree;
 
-public class AVLTreeNode {
+
+/**
+ * 0 - black color
+ * 1 - white color
+ */
+public class RBTNode {
+
+    public static final int RED = 0;
+    public static final int BLACK = 1;
 
     int height;
     int data;
-    AVLTreeNode right;
-    AVLTreeNode left;
+    RBTNode right;
+    RBTNode left;
+    int color;
 
-    public AVLTreeNode(int data) {
+    public RBTNode(int data,int color){
         this.data = data;
         this.right =null;
         this.left =null;
         this.height = 0;
+        this.color = color;
     }
 
     public int getHeight() {
@@ -30,19 +40,22 @@ public class AVLTreeNode {
         this.data = data;
     }
 
-    public AVLTreeNode getRight() {
+    public RBTNode getRight() {
         return right;
     }
 
-    public void setRight(AVLTreeNode right) {
+    public void setRight(RBTNode right) {
         this.right = right;
     }
 
-    public AVLTreeNode getLeft() {
+    public RBTNode getLeft() {
         return left;
     }
 
-    public void setLeft(AVLTreeNode left) {
+    public void setLeft(RBTNode left) {
         this.left = left;
     }
+
+
 }
+

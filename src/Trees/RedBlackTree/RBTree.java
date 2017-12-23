@@ -1,11 +1,11 @@
-package Trees.AVLTree;
+package Trees.RedBlackTree;
 
-public class AVLTree {
+public class RBTree {
 
-    AVLTreeNode root = null;
+    RBTNode root = null;
     //Driver function
     public static void main(String[] args) {
-        AVLTree tree = new AVLTree();
+        RBTree tree = new RBTree();
         tree.root = tree.insertData(9);
         tree.root = tree.insertData(8);
         tree.root = tree.insertData(4);
@@ -16,9 +16,13 @@ public class AVLTree {
 
     /* Function to insert data */
 
-    public AVLTreeNode insertData(int data)
+    public RBTNode insertData(int data)
 
     {
+        if (height(root)==0){
+            root = new RBTNode(data,RBTNode.BLACK);
+            return root;
+        }
 
         root = insert(root,data);
         return root;
@@ -28,40 +32,33 @@ public class AVLTree {
     /**
      * Insert
      */
-    public AVLTreeNode insert(AVLTreeNode root,int data){
+    public RBTNode insert(RBTNode root, int data){
+
         if (root==null){
-            root = new AVLTreeNode(data);
+            root = new RBTNode(data,RBTNode.RED);
         } else if (data<root.data){
             root.left = insert(root.left,data);
 
-            if (height(root.left)-height(root.right)==2){
-                if (data < root.left.data){
-                   root = rotateRight(root);
-                }else {
-                    root = doubleRotateLeft(root);
-                }
+            if (root.color !=RBTNode.BLACK){
+
             }
+
         }else{
             root.right = insert(root.right,data);
 
-            if (height(root.right)-height(root.left)==2){
-                if (data>root.right.data){
-                    root = rotateLeft(root);
-                }else {
-                    root = doubleRotateRight(root);
-                }
+            //instead of height check the colors for rb tree
+            if (root.color != RBTNode.BLACK){
+
             }
 
         }
-
-        root.height = height(root);
 
         return root;
     }
 
 
-    public AVLTreeNode rotateRight(AVLTreeNode root){
-        AVLTreeNode newRoot = root.left;
+    public RBTNode rotateRight(RBTNode root){
+        RBTNode newRoot = root.left;
         root.left = newRoot.right;
         newRoot.right = root;
 
@@ -71,7 +68,7 @@ public class AVLTree {
         return newRoot;
     }
 
-    public int height(AVLTreeNode root){
+    public int height(RBTNode root){
         if (root==null){
             return 0;
         }else {
@@ -79,13 +76,13 @@ public class AVLTree {
         }
     }
 
-    public AVLTreeNode doubleRotateRight(AVLTreeNode root){
+    public RBTNode doubleRotateRight(RBTNode root){
         root.right = rotateRight(root.right);
         return rotateLeft(root);
     }
 
-    public AVLTreeNode rotateLeft(AVLTreeNode root){
-        AVLTreeNode newRoot = root.right;
+    public RBTNode rotateLeft(RBTNode root){
+        RBTNode newRoot = root.right;
         root.right = newRoot.left;
         newRoot.left = root;
 
@@ -96,7 +93,7 @@ public class AVLTree {
 
     }
 
-    public AVLTreeNode doubleRotateLeft(AVLTreeNode root){
+    public RBTNode doubleRotateLeft(RBTNode root){
             root.left = rotateLeft(root.left);
             return rotateRight(root);
 

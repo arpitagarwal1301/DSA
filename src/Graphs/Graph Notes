@@ -1,0 +1,15 @@
+Vocabulary
+-Vertex
+-Edge
+
+
+Undirected
+
+vertex{
+    char ch;
+    boolean visited;
+}
+
+DFS(inorder sort of tree) , BFS(like level order of tree),Topological sort
+- there should not be any cycle other it will get into infinite loop
+

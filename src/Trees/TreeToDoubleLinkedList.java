@@ -26,44 +26,27 @@ public class TreeToDoubleLinkedList {
 //        tree.root.rightChild.leftChild = new TreeNode(13);
 
         TreeToDoubleLinkedList nodes = new TreeToDoubleLinkedList();
-        nodes.getTheNode(tree.root);
+        nodes.toDoublyLinkedList(tree.root,null);
 
     }
 
-    /**
-     * Preorder and list
-     * @param root
-     */
-    public TreeNode getTheNode(TreeNode root){
+
+    public void toDoublyLinkedList(TreeNode root,TreeNode prev){
         if (root==null){
-            return null;
+            return ;
         }
 
-
-
-        return root;
-    }
-
-    public TreeNode toDoublyLinkedList(TreeNode root){
-        if (root==null){
-            return null;
+        toDoublyLinkedList(root.leftChild,prev);
+        if (prev==null){
+            head = root;
+        }else {
+            root.leftChild = prev;
+            prev.rightChild = root;
         }
+        prev = root;
 
+        toDoublyLinkedList(root.rightChild,prev);
 
-        TreeNode left = toDoublyLinkedList(root.leftChild);
-        if ( !flat && left == null){
-           flat = true;
-           head = root;
-       }
-//       if ()
-//       tail = right;
-
-       root.rightChild = tail;
-       root.leftChild = left;
-
-       TreeNode right = toDoublyLinkedList(root.rightChild);
-
-       return head;
 
     }
 }

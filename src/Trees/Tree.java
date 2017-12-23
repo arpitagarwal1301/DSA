@@ -49,7 +49,7 @@ public class Tree {
         }
 
         if (data > root.data){
-           root.setRightChild(insertIntoTreeRec(root.rightChild,data)); ;
+           root.setRightChild(insertIntoTreeRec(root.rightChild,data));
         }else {
             root.setLeftChild(insertIntoTreeRec(root.leftChild,data));
         }
