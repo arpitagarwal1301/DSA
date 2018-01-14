@@ -10,6 +10,41 @@ vertex{
     boolean visited;
 }
 
-DFS(inorder sort of tree) , BFS(like level order of tree),Topological sort
-- there should not be any cycle other it will get into infinite loop
+DFS(inorder sort of tree) , BFS(like level order of tree)
+-It is similar to dfs and bfs of tree but the only diff. is it can have cycles so we use isVisited boolean key
 
+Topological sort
+- it should be Directed Acyclic Graph(DAG)
+Eg. build systems
+ * parent <- apache , child <- apache POI.
+ * api - get unisystem
+ * ide
+
+
+Spanning tree
+- Edges - n-1 (where n is #vertex)
+
+Minimum spanning tree (Prism's Algorithm)
+- acyclic,undirected
+- construct the table for solving
+- calculate vertex with min value
+- add to mst
+
+
+Shortest Path ( Dijkastra's Algo)
+- acyclic , undirected
+- Distance = current + distance
+- similar to mim. spanning tree
+- LIMITATION - IMP. will not support negative algorithm
+
+Shortest Path (Bellmond Ford)
+- Strictly directed graph
+- Diff. with dijkastra as we have to run the dijkastras V-1 times in this thing
+- (Imp.) THis algo can be used to identify negative cycle - If on Vth iteration it is reducing the distance
+  it is a negative cycle .
+
+
+Graph Coloring
+- No adjacent vertices have same color
+- Min. no of colors for coloring the graph
+- Chromatic no = no of min. colors required

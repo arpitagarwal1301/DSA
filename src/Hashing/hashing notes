@@ -1,0 +1,11 @@
+Hashing
+
+-Collision
+
+    -Separate/Direct chaining (Linked list will be build)
+
+    -Dynamic (re)Hashing
+     - Linear probing
+     - Quadratic probing
+
+    -Double hashing

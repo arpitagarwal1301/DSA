@@ -1,0 +1,11 @@
+*Linear search
+- O(n) complexity
+
+*Sorted Linear Search
+- given sorted array and we have to search for eg. [6,3,2,1]
+
+*Binary Search
+- pre-requisite - given list should be sorted
+
+Problems-
+- find duplicate

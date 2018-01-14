@@ -1,0 +1,30 @@
+Strings Algorithms
+
+BST of string
+-Drawback - only searches the whole word instead of search by character
+- so we use Trie to store words like in contacts of phone
+
+Trie
+- Used for dictionary , phone contacts etc
+- use when we have to search character by character
+- each node of trie will have 26 trie node
+- leaf node to detect end of string for eg on inserting cat and cats -> t,s both are leaf
+    in this trie if we search "ca" it will return false as we don't have a as leaf node
+
+   -drawback
+    -wastage of memory just inserting 'a' then we are wasting 25 spaces
+
+
+Ternary Search Tree
+- Used for Url autocompletion for eg on typing yahoo in url bar we get all suggestion like yahoo.com,yahoo.in etc
+- used when we have to search word by word
+- combination of BST and Trie
+- left,right,eq
+    if (next == null){
+        create new
+    }
+    if(eq){
+        move to next
+    }
+    if(next is greater ) then create in left
+    if(next is lesser) then create in right
