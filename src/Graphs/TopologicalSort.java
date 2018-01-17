@@ -42,7 +42,7 @@ public class TopologicalSort {
 
 
     private void topologicalSort(int v){
-        //same as dfs just we have to print reverse
+        //NOTE :: same as dfs just we have to print reverse
     }
 
     private int getAdjacent(int vertexPosition){

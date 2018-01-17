@@ -24,6 +24,6 @@ package Algorithms.Greedy;
 
 
  */
-public class AcitivitySelection {
+public class ActivitySelection {
 
 }
