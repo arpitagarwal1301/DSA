@@ -1,7 +1,7 @@
 **********************
 GREEDY ALGORITHM
 *********************
-
+ DO HACKER RANK PROBLEMS
 - Each step calculate optimal solution ...don't care about future
 
 Advantages
@@ -12,7 +12,7 @@ Disadvantages
 - will not work always for eg. finding min distance b/w two points
 
 Applications
-- dikjastra
+- dijkstra
 - min. spanning tree
 - topological sort
 - job sequencing
@@ -46,7 +46,7 @@ Problem
     [100,19,27,25,15]
 
 
-NOTE : ****Solution - sort the things that we want to maximise or minimise ,ascending or decending based on requirement
+NOTE : ****Solution - sort the thing(s) that we want to maximise or minimise ,ascending or descending based on requirement .
 
 ***********************
 DIVIDE AND CONQUER

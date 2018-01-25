@@ -1,0 +1,40 @@
+
+**************
+IMPORTANT : PARAMETER FOR SORTING
+**************
+
+1) Worst and average case time complexity
+2) Best case time complexity
+3) Auxiliary space (extra or temp space used )
+4) Boundary cases
+5) Sorting in place ? (without any extra space)
+6) Stable sort ? (two records with same key maintains initial order)
+
+
+
+#Bubble sort
+- adjacent elements swap(just like bubble going up one by one) until highest element reaches the end .
+- in next iteration it goes till n-1...and same
+- complexity n+(n-1)....0 = n^2
+- imp. to reduce complexity take boolean and exit in iteration when no swap is there
+- analysis and find out the PARAMETERS FOR SORTING values
+
+#Selection sort
+- calculate the min element from R.H.S of selected element and replace with starting in unsorted array
+- complexity n^2
+
+#Insertion sort
+-calculate the position to L.H.S of selected element and insert the element at right position by shifting the elements to the right of the
+ position by 1
+
+#Merge Sort
+-Two functions 1) divide 2) merge
+- complexity nLog(n)
+
+
+#Quick Sort
+-
+
+#Heap Sort
+-Heapify and remove
+-Min heap , max heap
