@@ -1,0 +1,29 @@
+DYNAMIC PROGRAMMING NOTES
+
+Reasons for dp over recursion
+- multiple calculations of same problem
+- for eg. fibonacchi for f(3) we are again calculation f(2) and f(1)
+
+What dp do
+- save the results of sub problems for later use
+
+
+Approaches
+- Top down approach (Memorization)
+- Bottom up approach (Tabulization)
+
+
+Top down(Memorization)
+- break problem into subproblems save it and store the result
+- just take an array to store the result and use it...its simple
+
+ top down
+    eg ....
+
+
+
+Bottom up(Tabulization)
+-
+
+
+

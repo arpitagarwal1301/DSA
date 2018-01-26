@@ -38,3 +38,7 @@ IMPORTANT : PARAMETER FOR SORTING
 #Heap Sort
 -Heapify and remove
 -Min heap , max heap
+-https://www.programiz.com/dsa/heap-sort
+- for slightly better optimisation start the root with 1 instead of 0 so that
+  we don't have to add +1 in left child and same for finding the parent we don't have to add
+  -1 in it...so left child = i*2, right = i*2+1,parent = i/2 ;
