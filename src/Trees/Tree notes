@@ -38,10 +38,10 @@ IMP** NOTE
  -- If the tree is a binary search tree,
  -- there is often some sort of less-than test on the node to decide if the recursion should go left or right.
 
-Note : height(no of nodes) and depth(no of edges) are different
+Note : height(no of nodes) and depth(no of edges) are same
 eg : for  A
          / \
-        B   c  height = 2, depth =1
+        B   c  height = 1, depth =1
 
 Links for referral - http://cslibrary.stanford.edu/110/BinaryTrees.html#s1
 

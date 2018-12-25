@@ -21,14 +21,17 @@ public class LoopDetectionRemoval {
         Node node4 = new Node(6);
         Node node5 = new Node(7);
         Node node6 = new Node(8);
+        Node node7 = new Node(9);
 
         node1.next = node2;
         node2.next = node3;
         node3.next = node4;
         node4.next = node5;
         node5.next = node6;
+        node6.next = node7;
+        node7.next = node3;
 
-        node4.next = node2;
+//        node4.next = node2;
         head = node1;
     }
 
@@ -41,16 +44,12 @@ public class LoopDetectionRemoval {
     }
 
     private void isLoop(){
-
-
         Node tortoise = head;
         Node hair = head;
         while (tortoise.next!=null && hair.next.next != null ){
-
             if (tortoise!=head && tortoise==hair){
                 System.out.println("True loop detected");
                 tortoise = head;
-
                 //DETECTING THE LOOP PREVIOUS AND REMOVING THE LOOP
                     while (tortoise.next != hair.next){
                         tortoise = tortoise.next;
@@ -64,7 +63,6 @@ public class LoopDetectionRemoval {
                 hair = hair.next.next;
             }
         }
-
         System.out.println("NO loop detected");
     }
 
