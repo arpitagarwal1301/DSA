@@ -2,6 +2,14 @@ package Stacks;
 
 import java.util.Scanner;
 
+
+
+/*
+Given three stack of the positive numbers, the task is to find the possible equal maximum sum of the stacks with removal
+ of top elements allowed.
+Stacks are represented as array, and the first index of the array represent the top element of the stack.
+https://www.geeksforgeeks.org/find-maximum-sum-possible-equal-sum-three-stacks/
+ */
 public class EqualStack {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);

@@ -24,7 +24,7 @@ Eg. build systems
 Spanning tree
 - Edges - n-1 (where n is #vertex)
 
-Minimum spanning tree (Prism's Algorithm)
+Minimum spanning tree/Spanning tree (Prism's Algorithm)
 - acyclic,undirected
 - construct the table for solving
 - calculate vertex with min value
@@ -40,7 +40,7 @@ Shortest Path ( Dijkastra's Algo)
 Shortest Path (Bellmond Ford)
 - Strictly directed graph
 - Diff. with dijkastra as we have to run the dijkastras V-1 times in this thing
-- (Imp.) THis algo can be used to identify negative cycle - If on Vth iteration it is reducing the distance
+- (Imp.) This algo can be used to identify negative cycle - If on Vth iteration it is reducing the distance
   it is a negative cycle .
 
 

@@ -47,7 +47,7 @@ public class StackUsing2Queue {
     }
 
     /**
-     * Pop from the non empty queue
+     * Pop from the non empty queue and the return the last element it will be the stack.pop()
      */
     public void pop(){
         if (queue1.getSize()!=0){

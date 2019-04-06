@@ -3,6 +3,10 @@ package Stacks;
 import java.util.Stack;
 
 /**
+ * Design a Data Structure SpecialStack that supports all the stack operations like push(), pop(), isEmpty(), isFull() and
+ * an additional operation getMin() which should return minimum element from the SpecialStack.
+ * All these operations of SpecialStack must be O(1).
+ * https://www.geeksforgeeks.org/design-a-stack-that-supports-getmin-in-o1-time-and-o1-extra-space/
  * Time complexity should be O(1) , IMPORTANT ,INTERVIEW
  */
 public class GetStackMin {
